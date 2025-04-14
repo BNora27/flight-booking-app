@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">FlightBookingApp</string>
+    <string name="cancel">Mégse</string>
+    <string name="registration">Regisztráció</string>
+    <string name="address">Cím</string>
+    <string name="phone_number">Telefonszám</string>
+    <string name="password_again">Jelszó mégegyszer</string>
+    <string name="password">Jelszó</string>
+    <string name="email_address">Email cím</string>
+    <string name="user_name">Felhasználó név</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="default_web_client_id">"292215433666-6pkesaoasfv0bq2e16fj8pl4obkorhgj.apps.googleusercontent.com"</string>
+    <string name="list_of_available_flights">Elérhető repülőjáratok listája</string>
+    <string name="delete">Törlés</string>
+    <string name="to_cart">Kosárba</string>
+    <string name="logout">Kijelentkezés</string>
+    <string name="settings">Beállítás</string>
+    <string name="cart">Kosár</string>
+    <string name="views">Nézetek</string>
+    <string name="search">Keresés</string>
+
+    <string name="title_placeholder">Cím</string>
+    <string name="item_placeholder">Leírás</string>
+    <string name="item_info_placeholder">Az út részletei</string>
+    <string name="subtitle_detail_text">Alcím részletek</string>
+
+    <string-array name="phone_labels">
+        <item>Otthon</item>
+        <item>Munkahely</item>
+        <item>Mobil</item>
+        <item>Egyéb</item>
+    </string-array>
+
+
+    <string-array name="flight_names">
+        <item>New York to London</item>
+        <item>Paris to Tokyo</item>
+        <item>Los Angeles to Sydney</item>
+        <item>Berlin to Dubai</item>
+        <item>Rome to Bangkok</item>
+        <item>London to Dubai</item>
+        <item>Paris to New York</item>
+        <item>Tokyo to Los Angeles</item>
+        <item>Madrid to Miami</item>
+        <item>Barcelona to Berlin</item>
+    </string-array>
+
+    <string-array name="flight_desc">
+        <item>Direct flight from New York to London!</item>
+        <item>Fly from Paris to Tokyo, with a quick layover.</item>
+        <item>Non-stop flight from Los Angeles to Sydney.</item>
+        <item>Fast flight from Berlin to Dubai with luxury services.</item>
+        <item>Fly from Rome to Bangkok, the gateway to Asia!</item>
+        <item>Direct flight from London to Dubai, quick and comfortable.</item>
+        <item>Paris to New York, the flight that takes you to the Big Apple!</item>
+        <item>Tokyo to Los Angeles, your bridge from East to West.</item>
+        <item>Fly from Madrid to Miami, sunny skies await!</item>
+        <item>Direct flight from Barcelona to Berlin, no layovers!</item>
+    </string-array>
+
+    <array name="flight_rates">
+        <item>4.5</item>
+        <item>4.8</item>
+        <item>5.0</item>
+        <item>4.0</item>
+        <item>4.7</item>
+        <item>4.9</item>
+        <item>4.6</item>
+        <item>4.7</item>
+        <item>4.3</item>
+        <item>4.4</item>
+    </array>
+
+    <array name="flight_images">
+        <item>@drawable/new_york_london</item>
+        <item>@drawable/paris_tokyo</item>
+        <item>@drawable/la_sydney</item>
+        <item>@drawable/berlin_dubai</item>
+        <item>@drawable/rome_bangkok</item>
+        <item>@drawable/london_dubai</item>
+        <item>@drawable/paris_new_york</item>
+        <item>@drawable/tokyo_la</item>
+        <item>@drawable/madrid_miami</item>
+        <item>@drawable/barcelona_berlin</item>
+    </array>
+
+    <array name="flight_price">
+        <item>1200 Dv</item>
+        <item>1500 Dv</item>
+        <item>2000 Dv</item>
+        <item>1800 Dv</item>
+        <item>1600 Dv</item>
+        <item>1700 Dv</item>
+        <item>1400 Dv</item>
+        <item>1900 Dv</item>
+        <item>1500 Dv</item>
+        <item>1300 Dv</item>
+    </array>
+</resources>
