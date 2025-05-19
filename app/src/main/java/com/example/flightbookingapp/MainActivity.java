@@ -155,6 +155,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         if (mAuth != null) {
             Intent intent = new Intent(this, FlightListActivity.class);
             startActivity(intent);
+            //finish();
         } else {
             Log.e(LOG_TAG, "Authentication object is null");
         }

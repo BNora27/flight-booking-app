@@ -32,8 +32,7 @@
         <activity
             android:name=".FlightListActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
-            android:permission="android.permission.CALL_PHONE"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
