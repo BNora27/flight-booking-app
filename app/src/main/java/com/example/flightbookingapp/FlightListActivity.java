@@ -281,13 +281,7 @@ public class FlightListActivity extends AppCompatActivity {
             Intent intent = new Intent(this, ProfileActivity.class);
             startActivity(intent);
             return true;
-        }else if (id == R.id.phone_button) {
-            Log.d(LOG_TAG, "Telephone clicked!");
-            Intent callIntent = new Intent(Intent.ACTION_CALL);
-            callIntent.setData(Uri.parse("tel:+36123456789"));
-            startActivity(callIntent);
-            return true;
-        } else if (id == R.id.view_selector) {
+        }else if (id == R.id.view_selector) {
             if (viewRow) {
                 changeSpanCount(item, R.drawable.ic_view_grid, 1);
             } else {
