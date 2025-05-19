@@ -15,7 +15,7 @@
         android:textSize="24sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:textAlignment="center"/>
+        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/userNameEditText"
@@ -24,15 +24,13 @@
         android:layout_marginTop="@dimen/register_margin_top"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:minHeight="48dp"
+        android:minHeight="56dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:ems="10"
         android:hint="@string/user_name"
         android:inputType="textPersonName"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/registrationTextView"/>
+        android:layout_below="@id/registrationTextView" />
 
     <EditText
         android:id="@+id/userEmailEditText"
@@ -41,15 +39,13 @@
         android:layout_marginTop="@dimen/register_margin_top"
         android:layout_marginLeft="@dimen/default_margin_side"
         android:layout_marginRight="@dimen/default_margin_side"
-        android:minHeight="48dp"
+        android:minHeight="56dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:ems="10"
         android:hint="@string/email_address"
         android:inputType="textEmailAddress"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/userNameEditText"/>
+        android:layout_below="@id/userNameEditText" />
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -58,15 +54,13 @@
         android:layout_marginTop="@dimen/register_margin_top"
         android:layout_marginLeft="@dimen/default_margin_side"
         android:layout_marginRight="@dimen/default_margin_side"
-        android:minHeight="48dp"
+        android:minHeight="56dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/userEmailEditText"/>
+        android:layout_below="@id/userEmailEditText" />
 
     <EditText
         android:id="@+id/passwordAgainEditText"
@@ -75,15 +69,13 @@
         android:layout_marginTop="@dimen/register_margin_top"
         android:layout_marginLeft="@dimen/default_margin_side"
         android:layout_marginRight="@dimen/default_margin_side"
-        android:minHeight="48dp"
+        android:minHeight="56dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:ems="10"
         android:hint="@string/password_again"
         android:inputType="textPassword"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/passwordEditText"/>
+        android:layout_below="@id/passwordEditText" />
 
     <EditText
         android:id="@+id/phoneEditText"
@@ -92,26 +84,25 @@
         android:layout_marginLeft="@dimen/default_margin_side"
         android:layout_marginTop="@dimen/register_margin_top"
         android:layout_marginRight="@dimen/default_margin_side"
-        android:minHeight="48dp"
+        android:minHeight="56dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:ems="10"
         android:hint="@string/phone_number"
         android:inputType="phone"
-        android:layout_below="@id/passwordAgainEditText"/>
+        android:layout_below="@id/passwordAgainEditText" />
 
     <Spinner
         android:id="@+id/phoneSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/default_margin_side"
-        android:minHeight="48dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
         android:layout_marginTop="12dp"
         android:layout_marginRight="@dimen/default_margin_side"
-        android:layout_below="@id/phoneEditText"/>
-
+        android:minHeight="56dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:layout_below="@id/phoneEditText" />
 
     <EditText
         android:id="@+id/addressEditText"
@@ -120,17 +111,14 @@
         android:layout_marginTop="@dimen/register_margin_top"
         android:layout_marginLeft="@dimen/default_margin_side"
         android:layout_marginRight="@dimen/default_margin_side"
-        android:minHeight="48dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:ems="10"
-        android:maxLines="3"
+        android:minHeight="56dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:hint="@string/address"
         android:inputType="textMultiLine|textPostalAddress"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/phoneSpinner"/>
-
+        android:ems="10"
+        android:maxLines="3"
+        android:layout_below="@id/phoneSpinner" />
 
     <LinearLayout
         android:id="@+id/buttonLayout"

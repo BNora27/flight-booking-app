@@ -1,7 +1,6 @@
 package com.example.flightbookingapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,12 +14,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.TypedArray;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -88,7 +87,7 @@ public class FlightListActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         mFirestore = FirebaseFirestore.getInstance();
-        mItems = mFirestore.collection("Items");
+        mItems = mFirestore.collection("Flights");
         queryData();
 
         IntentFilter filter = new IntentFilter();
@@ -172,6 +171,33 @@ public class FlightListActivity extends AppCompatActivity {
                 });
     }
 
+    private void queryDataByRating() {
+        mItemsData.clear();
+        mItems.orderBy("ratedInfo", Query.Direction.ASCENDING).limit(itemLimit).get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                        FlightItem item = document.toObject(FlightItem.class);
+                        item.setId(document.getId());
+                        mItemsData.add(item);
+                    }
+                    mAdapter.notifyDataSetChanged();
+                });
+    }
+
+    private void queryDataByName() {
+        mItemsData.clear();
+        mItems.orderBy("name", Query.Direction.ASCENDING).limit(itemLimit).get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                        FlightItem item = document.toObject(FlightItem.class);
+                        item.setId(document.getId());
+                        mItemsData.add(item);
+                    }
+                    mAdapter.notifyDataSetChanged();
+                });
+    }
+
+
     public void deleteItem(FlightItem item) {
         DocumentReference ref = mItems.document(item._getId());
         ref.delete()
@@ -241,6 +267,25 @@ public class FlightListActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.cart) {
             Log.d(LOG_TAG, "Cart clicked!");
+            return true;
+        }else if (id == R.id.sort_by_rating) {
+            Log.d(LOG_TAG, "Sort by rating clicked!");
+            queryDataByRating();
+            return true;
+        } else if (id == R.id.sort_by_name) {
+            Log.d(LOG_TAG, "Sort by name clicked!");
+            queryDataByName();
+            return true;
+        }else if (id == R.id.profile_button) {
+            Log.d(LOG_TAG, "Profile clicked!");
+            Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
+            return true;
+        }else if (id == R.id.phone_button) {
+            Log.d(LOG_TAG, "Telephone clicked!");
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(Uri.parse("tel:+36123456789"));
+            startActivity(callIntent);
             return true;
         } else if (id == R.id.view_selector) {
             if (viewRow) {

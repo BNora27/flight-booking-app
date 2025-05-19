@@ -1,6 +1,5 @@
 package com.example.flightbookingapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,14 +10,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -32,7 +26,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     EditText passwordConfirmEditText;
     EditText phoneEditText;
     Spinner spinner;
-    RadioGroup accountTypeGroup;
 
     private SharedPreferences preferences;
     private FirebaseAuth mAuth;
@@ -90,18 +83,13 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         String phone = phoneEditText.getText().toString();
         String phoneType = spinner.getSelectedItem().toString();
 
-        int accountTypeId = accountTypeGroup.getCheckedRadioButtonId();
-        View radioButton = accountTypeGroup.findViewById(accountTypeId);
-        int id = accountTypeGroup.indexOfChild(radioButton);
-        String accountType =  ((RadioButton)accountTypeGroup.getChildAt(id)).getText().toString();
-
         Log.i(LOG_TAG, "Regisztrált: " + userName + ", e-mail: " + email);
-        // startShopping();
+
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
             if(task.isSuccessful()){
                 Log.d(LOG_TAG, "User created successfully");
-                startShopping();
+                startBookingFlight();
             } else {
                 Log.d(LOG_TAG, "User wasn't created successfully");
                 Toast.makeText(RegisterActivity.this, "User was't created successfully: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -113,7 +101,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         finish();
     }
 
-    private void startShopping(/* registered used class */) {
+    private void startBookingFlight(/* registered used class */) {
         Intent intent = new Intent(this, FlightListActivity.class);
         // intent.putExtra("SECRET_KEY", SECRET_KEY);
         startActivity(intent);

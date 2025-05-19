@@ -5,8 +5,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -54,6 +57,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         userNameET = findViewById(R.id.editTextUserName);
         passwordET = findViewById(R.id.editTextPassword);
 
+        ImageView planeImage = findViewById(R.id.planeImage);
+        Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in_out);
+        planeImage.startAnimation(fadeAnimation);
+
         preferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
         mAuth = FirebaseAuth.getInstance();
 
@@ -90,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         mAuth.signInWithCredential(credential).addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {
                 Log.d(LOG_TAG, "signInWithCredential:success");
-                startShopping();
+                startBookingFlight();
             } else {
                 Log.w(LOG_TAG, "signInWithCredential:failure", task.getException());
             }
@@ -104,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         mAuth.signInWithEmailAndPassword(userName, password).addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {
                 Log.d(LOG_TAG, "User logged in successfully");
-                startShopping();
+                startBookingFlight();
             } else {
                 if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                     // Handle invalid credentials error
@@ -130,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         mAuth.signInAnonymously().addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {
                 Log.d(LOG_TAG, "Anonymous user logged in successfully");
-                startShopping();
+                startBookingFlight();
             } else {
                 Log.d(LOG_TAG, "Anonymous login failed");
                 Toast.makeText(MainActivity.this, "Login failed: " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
@@ -144,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         startActivity(intent);
     }
 
-    private void startShopping() {
+    private void startBookingFlight() {
         if (mAuth != null) {
             Intent intent = new Intent(this, FlightListActivity.class);
             startActivity(intent);

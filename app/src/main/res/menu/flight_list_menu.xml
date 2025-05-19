@@ -18,6 +18,16 @@
         >
     </item>
     <item
+        android:id="@+id/sort_by_rating"
+        app:showAsAction="always"
+        android:title="@string/sortByRating"
+        android:icon="@drawable/ic_descending"/>
+    <item
+        android:id="@+id/sort_by_name"
+        app:showAsAction="always"
+        android:title="@string/sortByName"
+        android:icon="@drawable/ic_ascending"/>
+    <item
         android:id="@+id/view_selector"
         app:showAsAction="always"
         android:title="@string/views"
@@ -36,6 +46,20 @@
         app:showAsAction="never"
         android:icon="@drawable/ic_settings"
         android:title="@string/settings"
+        android:orderInCategory="1">
+    </item>
+    <item
+        android:id="@+id/profile_button"
+        app:showAsAction="never"
+        android:icon="@drawable/baseline_person_24"
+        android:title="@string/profile"
+        android:orderInCategory="1">
+    </item>
+    <item
+        android:id="@+id/phone_button"
+        app:showAsAction="never"
+        android:icon="@drawable/baseline_person_24"
+        android:title="@string/callHelp"
         android:orderInCategory="1">
     </item>
 </menu>

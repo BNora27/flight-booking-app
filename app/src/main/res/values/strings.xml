@@ -23,6 +23,15 @@
     <string name="item_placeholder">Leírás</string>
     <string name="item_info_placeholder">Az út részletei</string>
     <string name="subtitle_detail_text">Alcím részletek</string>
+    <string name="plane_image">Kezdőoldal Kép</string>
+    <string name="loginwithgoogle">Bejelentkezés google fiókkal</string>
+    <string name="profile">Profil</string>
+    <string name="backToThePrevPage">Vissza</string>
+    <string name="callHelp">Ügyfélszolgálat hívása</string>
+    <string name="edit">Szerkesztés</string>
+    <string name="sortByPrice">Rendezés ár szerint</string>
+    <string name="sortByName">Rendezés név szerint</string>
+    <string name="sortByRating">Értékelés alapján rendezés</string>
 
     <string-array name="phone_labels">
         <item>Otthon</item>
